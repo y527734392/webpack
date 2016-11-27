@@ -1,0 +1,12 @@
+#base js
+/js/base.js
+/js/version.js
+/sass
+vcs.xml
+.sass*
+*.css.map
+.idea
+.DS_Store
+node_modules*
+node_modules/*
+
