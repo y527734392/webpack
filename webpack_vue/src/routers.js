@@ -6,22 +6,30 @@
  * component : 路由的组件路径
  */
 const routers = [{
-    path: '/',
+    path: '/index',
     name: 'index',
     component(resolve) {
-        console.log(resolve);
         require.ensure(['./index.vue'], () => {
-         resolve(require('./index.vue'));
+            resolve(require('./index.vue'));
          });
     },
     children: [
         {
-            path: '/welfare',
-            name: 'welfare',
+            path: '/banner',
+            name: 'banner',
             component(resolve) {
-               /* require.ensure(['./components/welfare/welfare.vue'], () => {
-                 resolve(require('./components/welfare/welfare.vue'));
-                 });*/
+                require.ensure(['./components/banner/banner.vue'], () => {
+                    resolve(require('./components/banner/banner.vue'));
+                });
+            }
+        },
+        {
+            path: '/goods',
+            name: 'goods',
+            component(resolve) {
+                require.ensure(['./components/goods/goods'], () => {
+                    resolve(require('./components/goods/goods'));
+                });
             }
         }],
 }];
